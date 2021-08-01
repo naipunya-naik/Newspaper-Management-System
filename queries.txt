@@ -1,0 +1,27 @@
+CREATE TABLE login(
+
+	uid varchar(20) PRIMARY KEY,
+    pass varchar(50),
+    type varchar(20)
+);
+Create table customer¬_details(name varchar(50), phonenumber varchar(50) ,forgien key(phonenumber),address varchar(50), email varchar(50) primary key, psw varchar(50)  );
+
+Create table publisher_details(name varchar(50) primary key,phonenumber varchar(50),address varchar(50),p/d varchar(50),ediname varchar(50));
+
+Create table requirements(pid varchar(50) primary key,papername varchar(50),costperday varchar(50));
+Create table subscribers(email varchar(20),pid varchar(50) primary key);
+
+3.3.1  Stored procedure 
+DELIMITER $$
+Create DEFINER = root @localhost  PROCEDURE  ‘change password’, Update login set login.pass=pass WHERE login.uid=uid
+DELIMITER;
+
+3.3.2   Trigger
+INSERT INTO “subs”(‘email’,’pid’)values((select pid From ‘subscribers’)
+
+BEGIN
+Select * from subs;
+END
+
+
+
